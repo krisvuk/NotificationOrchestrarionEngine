@@ -1,0 +1,59 @@
+{
+	"compilerOptions": { /* Docs: https://www.typescriptlang.org/tsconfig */
+		//
+		//  Source and target settings
+		//
+		"rootDir": "src",
+		"outDir": "bin",
+		//
+		// Transpiler settings
+		// 
+		"module": "ES2022",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"allowJs": true,
+		"checkJs": true,
+		"skipLibCheck": true, /* Skips type checking of all declaration files (*.d.ts), including those in node_modules. */
+		"allowUnreachableCode": true,
+		//
+		// lib & types
+		// 
+		"lib": [
+			"ES2022"
+		],
+		"types": [
+			"node"
+		],
+		//
+		// Output settings
+		//
+		"target": "ES2022",
+		"composite": false,
+		"sourceMap": true, /* Set to true if you want to generate sourcemap files (.map) */
+		"declaration": true, /* Set to true if you want to generate declaration files (.d.ts) */
+		"declarationMap": false, /* Set to true to generate sourcemap files for d.ts files */
+		// 
+		// Strictness and transpiler settings
+		//
+		"strict": true,
+		"noImplicitAny": false,
+		"strictNullChecks": true,
+		"noImplicitOverride": true,
+		"useUnknownInCatchVariables": false,
+		"exactOptionalPropertyTypes": true,
+		"forceConsistentCasingInFileNames": true,
+		"strictFunctionTypes": true,
+	},
+	"include": [
+		"src/**/*.ts",
+	],
+	"exclude": [
+		"node_modules",
+		"<node_internals>/**",
+	],
+	"ts-node": {
+		"experimentalSpecifierResolution": "node",
+		"transpileOnly": true,
+		"esm": true,
+	},
+}

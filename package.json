@@ -1,0 +1,37 @@
+{
+	"name": "@kris/notificationworkflowexecutor",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "",
+	"main": "src/index.ts",
+	"scripts": {
+		"build": "./node_modules/.bin/tsc && node bin/index.js",
+		"clean": "rimraf ./src/**/bin ./bin ./src/**/tsconfig.tsbuildinfo tsconfig.tsbuildinfo",
+		"rebuild": "npm run clean && npm run build",
+		"buildw": "./node_modules/.bin/tsc -b -v -w --preserveWatchOutput -watch --extendedDiagnostics",
+		"eslint": "./node_modules/.bin/eslint \"./src/**/**.ts\"",
+		"dev": "set TS_NODE_FILES=true & node --inspect --loader ts-node/esm src/index.ts",
+		"nodemon": "./node_modules/.bin/nodemon --watch src/**/*.ts --watch src/**/*.js --exec node --inspect --loader ts-node/esm ./src/index.ts",
+		"tsc-watch": "./node_modules/.bin/tsc-watch -b -v -i -w --noclear --compiler \"./node_modules/.bin/tsc\" --onSuccess \"node --inspect --es-module-specifier-resolution=node ./bin/index.js\""
+	},
+	"keywords": [],
+	"author": "Tomas Nilsson",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/express": "^4.17.21",
+		"@typescript-eslint/eslint-plugin": "^8.3.0",
+		"@typescript-eslint/parser": "^8.3.0",
+		"eslint": "^9.9.1",
+		"nodemon": "^3.1.4",
+		"rimraf": "^6.0.1",
+		"ts-node": "^10.9.2",
+		"tsc-watch": "^6.2.0",
+		"typescript": "^5.5.4",
+		"typescript-eslint": "^8.3.0"
+	},
+	"dependencies": {
+		"@effect/schema": "^0.75.5",
+		"effect": "^3.10.16",
+		"express": "^4.19.2"
+	}
+}
